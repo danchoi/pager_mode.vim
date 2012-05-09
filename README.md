@@ -6,8 +6,6 @@ This simple Vim plugin gives Vim a pager mode.
       f           in pager mode, <PageDown>
       <space>     in pager mode, <PageDown>
       b           in pager mode, <PageUP>
-      d           in pager mode, scroll down half a page
-      u           in pager mode, scroll up half a page
 
 I wanted this for myself because on my laptop, paging up or down in Vim
 required key-chording (e.g. CTRL-f instead of just f) since there are no

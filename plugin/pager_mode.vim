@@ -12,15 +12,11 @@ func! s:toggle_pager_mode()
     nmap  b <PageUp>
     nmap  f <PageDown>
     nmap  <space> <PageDown>
-    nmap  d <c-d>
-    nmap  u <c-u>
     let b:in_pager_mode = 1
     echo "pager mode is on"
   else
     nunmap  b
     nunmap  f
-    nunmap  u
-    nunmap  d
     nunmap  <space>
     echo "pager mode is off"
     let b:in_pager_mode = 0
