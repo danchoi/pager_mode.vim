@@ -15,14 +15,14 @@ func! s:toggle_pager_mode()
     nmap <buffer> d <c-d>
     nmap <buffer> u <c-u>
     let b:in_pager_mode = 1
-    echom "pager mode is on"
+    echo "pager mode is on"
   else
     nunmap <buffer> b
     nunmap <buffer> f
     nunmap <buffer> u
     nunmap <buffer> d
-    nmap <buffer> <space>
-    echom "pager mode is off"
+    nunmap <buffer> <space>
+    echo "pager mode is off"
     let b:in_pager_mode = 0
   endif
 endfunc
