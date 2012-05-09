@@ -9,19 +9,19 @@ let b:in_pager_mode = 0
 func! s:toggle_pager_mode()
   if !exists("b:in_pager_mode") || b:in_pager_mode == 0
     " turn it on
-    nmap <buffer> b <PageUp>
-    nmap <buffer> f <PageDown>
-    nmap <buffer> <space> <PageDown>
-    nmap <buffer> d <c-d>
-    nmap <buffer> u <c-u>
+    nmap  b <PageUp>
+    nmap  f <PageDown>
+    nmap  <space> <PageDown>
+    nmap  d <c-d>
+    nmap  u <c-u>
     let b:in_pager_mode = 1
     echo "pager mode is on"
   else
-    nunmap <buffer> b
-    nunmap <buffer> f
-    nunmap <buffer> u
-    nunmap <buffer> d
-    nunmap <buffer> <space>
+    nunmap  b
+    nunmap  f
+    nunmap  u
+    nunmap  d
+    nunmap  <space>
     echo "pager mode is off"
     let b:in_pager_mode = 0
   endif
