@@ -11,12 +11,18 @@ func! s:toggle_pager_mode()
     " turn it on
     nmap <buffer> b <PageUp>
     nmap <buffer> f <PageDown>
+    nmap <buffer> <space> <PageDown>
+    nmap <buffer> d <c-d>
+    nmap <buffer> u <c-u>
     let b:in_pager_mode = 1
-    echom "pager mode is on. Use b for <PageUp> and f for <PageDown>"
+    echom "pager mode is on"
   else
     nunmap <buffer> b
     nunmap <buffer> f
-    echom "pager mode is off."
+    nunmap <buffer> u
+    nunmap <buffer> d
+    nmap <buffer> <space>
+    echom "pager mode is off"
     let b:in_pager_mode = 0
   endif
 endfunc
