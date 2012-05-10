@@ -7,6 +7,8 @@ This simple Vim plugin gives Vim a pager mode.
       <space>     in pager mode, <PageDown>
       b           in pager mode, <PageUP>
 
+When pager mode is on, it will say so in the Vim status line. 
+
 I wanted this for myself because on my laptop, paging up or down in Vim
 required key-chording (e.g. CTRL-f instead of just f) since there are no
 dedicated Page Up or Page Down keys. I wanted the `less` command's ability
