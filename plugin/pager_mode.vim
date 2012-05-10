@@ -6,6 +6,12 @@
 
 let b:in_pager_mode = 0
 
+function! PagerModeStatusLine()
+  let line =  "%<pager mode is on %r%=%-14.(%l,%c%V%)\ %P"
+  return line
+endfunc
+
+
 func! s:toggle_pager_mode()
   if !exists("b:in_pager_mode") || b:in_pager_mode == 0
     " turn it on
@@ -13,13 +19,14 @@ func! s:toggle_pager_mode()
     nmap  f <PageDown>
     nmap  <space> <PageDown>
     let b:in_pager_mode = 1
-    echo "pager mode is on"
+    let s:old_status_line = &statusline
+    set statusline=%!PagerModeStatusLine()
   else
     nunmap  b
     nunmap  f
     nunmap  <space>
-    echo "pager mode is off"
     let b:in_pager_mode = 0
+    exec "set statusline=".s:old_status_line
   endif
 endfunc
 
