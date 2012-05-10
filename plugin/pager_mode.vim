@@ -20,13 +20,15 @@ func! s:toggle_pager_mode()
     nmap  <space> <PageDown>
     let b:in_pager_mode = 1
     let s:old_status_line = &statusline
+    let s:old_laststatus = &laststatus 
     set statusline=%!PagerModeStatusLine()
+    set laststatus=2
   else
     nunmap  b
     nunmap  f
     nunmap  <space>
     let b:in_pager_mode = 0
-    exec "set statusline=".s:old_status_line
+    exec "set statusline=".s:old_status_line." laststatus=".s:old_laststatus
   endif
 endfunc
 
